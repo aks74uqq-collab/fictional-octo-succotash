@@ -3,4 +3,4 @@ Allow: /
 Allow: /pages/
 Allow: /posts/
 
-Sitemap: https://你的域名.com/sitemap.xml
+Sitemap: https://aks74uqq-collab.github.io/fictional-octo-succotash/sitemap.xml
