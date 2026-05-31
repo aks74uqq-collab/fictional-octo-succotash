@@ -1,24 +1,21 @@
-name: Deploy to Vercel
+name: Deploy VitePress to GitHub Pages
 
 on:
   push:
     branches: [main]
-    paths:
-      - 'posts/**'
-      - 'pages/**'
-      - '.vitepress/**'
-      - 'public/**'
-      - 'package.json'
-      - 'pnpm-lock.yaml'
-      - 'index.md'
-      - 'vercel.json'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
 
     steps:
       - uses: actions/checkout@v4
@@ -36,8 +33,15 @@ jobs:
 
       - run: pnpm build
 
-      - name: Deploy to Vercel
-        run: npx vercel deploy --prod --yes --token="${{ secrets.VERCEL_TOKEN }}"
-        env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .vitepress/dist
+
+  deploy:
+    environment:
+      name: github-pages
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - uses: actions/deploy-pages@v4
