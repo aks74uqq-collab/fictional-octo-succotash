@@ -23,7 +23,7 @@ const themeConfig = await getThemeConfig();
 // https://vitepress.dev/reference/site-config
 export default withPwa(
   defineConfig({
-    base: '/fictional-octo-succotash/',
+    base: '/',
     title: themeConfig.siteMeta.title,
     description: themeConfig.siteMeta.description,
     lang: themeConfig.siteMeta.lang,
@@ -168,27 +168,27 @@ export default withPwa(
         short_name: themeConfig.siteMeta.title,
         description: themeConfig.siteMeta.description,
         display: "standalone",
-        start_url: "/fictional-octo-succotash/",
+        start_url: "/",
         theme_color: "#fff",
         background_color: "#efefef",
         icons: [
           {
-            src: "/fictional-octo-succotash/images/logo/favicon-32x32.webp",
+            src: "/images/logo/favicon-32x32.webp",
             sizes: "32x32",
             type: "image/webp",
           },
           {
-            src: "/fictional-octo-succotash/images/logo/favicon-96x96.webp",
+            src: "/images/logo/favicon-96x96.webp",
             sizes: "96x96",
             type: "image/webp",
           },
           {
-            src: "/fictional-octo-succotash/images/logo/favicon-256x256.webp",
+            src: "/images/logo/favicon-256x256.webp",
             sizes: "256x256",
             type: "image/webp",
           },
           {
-            src: "/fictional-octo-succotash/images/logo/favicon-512x512.webp",
+            src: "/images/logo/favicon-512x512.webp",
             sizes: "512x512",
             type: "image/webp",
           },
