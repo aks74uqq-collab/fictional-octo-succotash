@@ -149,7 +149,12 @@ onBeforeUnmount(() => {
     }
   }
   .title {
-    font-weight: bold;
+    font-family:
+      "PingFang SC",
+      "Microsoft YaHei",
+      "Noto Sans CJK SC",
+      sans-serif;
+    font-weight: 600;
     font-size: 2.75rem;
   }
   .subtitle {
