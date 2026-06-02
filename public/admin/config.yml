@@ -29,9 +29,20 @@ collections:
     create: true
     delete: true
 
-    slug: "{{year}}/{{slug}}"
+    slug: "{{slug}}"
+    path: "{{year}}/{{slug}}"
 
     summary: "{{title}}"
+
+    nested:
+      depth: 2
+      summary: "{{title}}"
+      subfolders: false
+
+    meta:
+      path:
+        widget: "string"
+        label: "Path"
 
     editor:
       preview: true
