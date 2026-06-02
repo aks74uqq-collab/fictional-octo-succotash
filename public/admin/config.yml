@@ -20,29 +20,81 @@ publish_mode: editorial_workflow
 
 collections:
 
-  - name: "posts"
-    label: "博客文章"
+  - name: "posts_2026"
+    label: "博客文章（2026）"
     label_singular: "文章"
 
-    folder: "posts"
+    folder: "posts/2026"
 
     create: true
     delete: true
 
     slug: "{{slug}}"
-    path: "{{year}}/{{slug}}"
 
     summary: "{{title}}"
 
-    nested:
-      depth: 2
-      summary: "{{title}}"
-      subfolders: false
+    editor:
+      preview: true
 
-    meta:
-      path:
+    fields:
+
+      - label: "标题"
+        name: "title"
         widget: "string"
-        label: "Path"
+        required: true
+
+      - label: "发布日期"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        default: "{{now}}"
+
+      - label: "分类"
+        name: "categories"
+        widget: "list"
+        required: false
+        default: []
+
+      - label: "标签"
+        name: "tags"
+        widget: "list"
+        required: false
+        default: []
+
+      - label: "文章摘要"
+        name: "description"
+        widget: "text"
+        required: false
+
+      - label: "封面图"
+        name: "cover"
+        widget: "image"
+        required: false
+
+      - label: "置顶文章"
+        name: "top"
+        widget: "boolean"
+        default: false
+        required: false
+
+      - label: "正文"
+        name: "body"
+        widget: "markdown"
+
+  - name: "posts_2025"
+    label: "历史文章（2025）"
+    label_singular: "文章"
+
+    folder: "posts/2025"
+
+    create: true
+    delete: true
+
+    slug: "{{slug}}"
+
+    summary: "{{title}}"
 
     editor:
       preview: true
