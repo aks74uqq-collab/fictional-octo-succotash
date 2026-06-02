@@ -4,12 +4,12 @@ backend:
   branch: main
   # OAuth 代理地址：先部署 https://github.com/decaporg/oauth-provider 到你的 Vercel
   # 部署完成后，将下面的 base_url 替换为你的 OAuth 代理地址
-  base_url: https://YOUR-OAUTH-PROXY.vercel.app
+  base_url: https://decap-cms-oauth-rouge.vercel.app
 
 locale: zh_Hans
 
-site_url: https://aks74uqq-collab.github.io/fictional-octo-succotash
-display_url: https://aks74uqq-collab.github.io/fictional-octo-succotash
+site_url: http://wqj.it.com
+display_url: http://wqj.it.com
 
 logo_url: /favicon.ico
 
